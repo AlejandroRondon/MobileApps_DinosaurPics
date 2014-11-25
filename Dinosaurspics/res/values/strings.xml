@@ -4,5 +4,8 @@
     <string name="app_name">Dinosaurspics</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="sTitle">Title</string>
+    <string name="sDescription">Description</string>
+    <string name="sPictDesc">Picture Description</string>
 
 </resources>
