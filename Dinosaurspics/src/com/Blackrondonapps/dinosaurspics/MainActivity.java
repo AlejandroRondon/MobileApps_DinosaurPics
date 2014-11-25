@@ -1,17 +1,66 @@
 package com.Blackrondonapps.dinosaurspics;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 /*Mark*/
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
-
+	private ListView lista; 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.list);
+        
+        ArrayList<List_Entry> dinosaurs = new ArrayList<List_Entry>();
+        
+        dinosaurs.add(new List_Entry(R.drawable.dino1, "Dino1", "Voraz"));
+        dinosaurs.add(new List_Entry(R.drawable.dino2, "Dino2", "Veloz"));
+        dinosaurs.add(new List_Entry(R.drawable.dino3, "Dino3", "Temible"));
+        dinosaurs.add(new List_Entry(R.drawable.dino4, "Dino4", "Gigante"));
+        dinosaurs.add(new List_Entry(R.drawable.dino5, "Dino5", "Colosal"));
+
+        lista = (ListView) findViewById(R.id.Lv_List);
+        lista.setAdapter(new List_Adapter(this, R.layout.entry, dinosaurs){
+			@Override
+			public void onEntrada(Object entrada, View view) {
+		        if (entrada != null) {
+		            TextView texto_superior_entrada = (TextView) view.findViewById(R.id.tTitle); 
+		            if (texto_superior_entrada != null) 
+		            	texto_superior_entrada.setText(((List_Entry) entrada).get_title()); 
+
+		            TextView texto_inferior_entrada = (TextView) view.findViewById(R.id.tDescription); 
+		            if (texto_inferior_entrada != null)
+		            	texto_inferior_entrada.setText(((List_Entry) entrada).get_description()); 
+
+		            ImageView imagen_entrada = (ImageView) view.findViewById(R.id.ivPicture); 
+		            if (imagen_entrada != null)
+		            	imagen_entrada.setImageResource(((List_Entry) entrada).get_idPicture());
+		        }
+			}
+		});
+        lista.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> pariente, View view, int posicion, long id) {
+				List_Entry elegido = (List_Entry) pariente.getItemAtPosition(posicion); 
+
+                CharSequence texto = "Seleccionado: " + elegido.get_description();
+                Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
+                toast.show();
+			}
+		});
+
     }
 
 
