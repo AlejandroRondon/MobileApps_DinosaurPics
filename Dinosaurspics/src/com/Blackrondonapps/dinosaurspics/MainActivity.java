@@ -24,12 +24,19 @@ public class MainActivity extends Activity {
         
         ArrayList<List_Entry> dinosaurs = new ArrayList<List_Entry>();
         
-        dinosaurs.add(new List_Entry(R.drawable.dino1, "Dino1", "Voraz"));
-        dinosaurs.add(new List_Entry(R.drawable.dino2, "Dino2", "Veloz"));
-        dinosaurs.add(new List_Entry(R.drawable.dino3, "Dino3", "Temible"));
-        dinosaurs.add(new List_Entry(R.drawable.dino4, "Dino4", "Gigante"));
-        dinosaurs.add(new List_Entry(R.drawable.dino5, "Dino5", "Colosal"));
-
+        dinosaurs.add(new List_Entry(R.drawable.dino1, "Terodactilo", "Voraz"));
+        dinosaurs.add(new List_Entry(R.drawable.dino2, "Triceratops", "Veloz"));
+        dinosaurs.add(new List_Entry(R.drawable.dino3, "Velociraptor", "Temible"));
+        dinosaurs.add(new List_Entry(R.drawable.dino15, "Rex", "Gigante"));
+//        dinosaurs.add(new List_Entry(R.drawable.dino4, "Apatosaurio", "Colosal"));
+//        dinosaurs.add(new List_Entry(R.drawable.dino6, "Dino5", "Colosal"));
+//        dinosaurs.add(new List_Entry(R.drawable.dino8, "Dino5", "Colosal"));
+//        dinosaurs.add(new List_Entry(R.drawable.dino10, "Dino5", "Colosal"));
+//        dinosaurs.add(new List_Entry(R.drawable.dino11, "Dino5", "Colosal"));
+//        dinosaurs.add(new List_Entry(R.drawable.dino12, "Dino5", "Colosal"));
+//        dinosaurs.add(new List_Entry(R.drawable.dino13, "Dino5", "Colosal"));
+//        dinosaurs.add(new List_Entry(R.drawable.dino14, "Dino5", "Colosal"));
+//        dinosaurs.add(new List_Entry(R.drawable.dino15, "Dino5", "Colosal"));
         lista = (ListView) findViewById(R.id.Lv_List);
         lista.setAdapter(new List_Adapter(this, R.layout.entry, dinosaurs){
 			@Override

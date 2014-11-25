@@ -21,8 +21,10 @@
 
         <TextView
             android:id="@+id/tTitle"
+            style="@style/CodeFont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:shadowColor="@color/blue"
             android:text="@string/sTitle"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -31,6 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sDescription"
+            style="@style/CustumButtonStyle"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
     </LinearLayout>
