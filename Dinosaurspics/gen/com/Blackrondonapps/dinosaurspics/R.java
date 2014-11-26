@@ -106,6 +106,7 @@ public final class R {
         public static final int CodeFont=0x7f080005;
         public static final int CodeFont_Red=0x7f080006;
         public static final int CustomTheme=0x7f080002;
+        public static final int CustumButtonStyle=0x7f080008;
         public static final int etStyle=0x7f080004;
         public static final int tvDescription=0x7f080007;
         public static final int tvStyle=0x7f080003;
